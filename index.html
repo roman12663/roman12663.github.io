@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Roman12663</title>
+    <title>Roman's Website</title>
     <meta
       name="description"
       content="Roman12663 is a friendly content creator who loves playing a variety of games while entertaining his audience."
     />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <!-- Sidebar w/ Navigation Buttons -->
@@ -19,17 +23,18 @@
           <i class="fas fa-home"></i>
         </button>
 
-        <button onclick="window.location.href='#twitch-stream'">
-          <i class="fab fa-twitch"></i>
+        <button onclick="window.location.href='#tiktok'">
+          <i class="fab fa-tiktok"></i>
         </button>
 
         <button onclick="window.location.href='#latest-video'">
           <i class="fab fa-youtube"></i>
         </button>
 
-        <button onclick="window.location.href='#tiktok'">
-          <i class="fab fa-tiktok"></i>
+        <button onclick="window.location.href='#twitch-stream'">
+          <i class="fab fa-twitch"></i>
         </button>
+
         <button onclick="Site.creatorCredit();">
           <i class="fas fa-info"></i>
         </button>
@@ -46,19 +51,60 @@
           <h4>Variety Gamer & Content Creator</h4>
 
           <figure>
-            <img
-              src="https://yt3.googleusercontent.com/Oa2RUV8hIqHAeT0tGJIgyc62iT1AMB4MPUsfAUTWZ6-RHEQ8S_nXU5bmOBDMFNDWMuvxfQ87=s176-c-k-c0x00ffffff-no-rj"
-              alt="Portrait"
-            />
+            <img src="./portrait.jpg" alt="Portrait" />
           </figure>
         </header>
         <section class="links">
-          <a href="#?missing-link"><i class="fab fa-twitch fa-2x"></i></a>
-          <a href="#?missing-link"><i class="fab fa-youtube fa-2x"></i></a>
-          <a href="#?missing-link"><i class="fab fa-discord fa-2x"></i></a>
-          <a href="#?missing-link"><i class="fab fa-instagram fa-2x"></i></a>
-          <a href="#?missing-link"><i class="fab fa-tiktok fa-2x"></i></a>
+          <a href="https://twitch.tv/roman12663" target="_blank"
+            ><i class="fab fa-twitch fa-2x"></i
+          ></a>
+          <a href="https://www.youtube.com/@roman1266" target="_blank"
+            ><i class="fab fa-youtube fa-2x"></i
+          ></a>
+          <a href="https://discord.gg/5H9zsdN" target="_blank"
+            ><i class="fab fa-discord fa-2x"></i
+          ></a>
+          <a href="https://www.instagram.com/roman12663/" target="_blank"
+            ><i class="fab fa-instagram fa-2x"></i
+          ></a>
+          <a href="https://www.tiktok.com/@roman12663" target="_blank"
+            ><i class="fab fa-tiktok fa-2x"></i
+          ></a>
         </section>
+      </article>
+
+      <!-- TikTok Embed -->
+      <article id="tiktok" class="page">
+        <blockquote
+          class="tiktok-embed"
+          cite="https://www.tiktok.com/@roman12663"
+          data-unique-id="roman12663"
+          data-embed-from="embed_page"
+          data-embed-type="creator"
+          style="max-width: 780px; min-width: 288px"
+        >
+          <section>
+            <a
+              target="_blank"
+              href="https://www.tiktok.com/@roman12663?refer=creator_embed"
+              >@roman12663</a
+            >
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </article>
+
+      <!-- YouTube Embed -->
+      <article id="latest-video" class="page">
+        <iframe
+          id="youtube-embed"
+          class="youtube"
+          style="width: 90%; height: 90%; margin: auto"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
       </article>
 
       <!-- Twitch Embed -->
@@ -80,33 +126,17 @@
             generator</small
           ></iframe
         >
-      </article>
-
-      <!-- YouTube Embed -->
-      <article id="latest-video" class="page">
-        <iframe
-          id="youtube-embed"
-          class="youtube"
-          style="width: 90%; height: 90%; margin: auto"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </article>
-
-      <!-- TikTok Embed -->
-      <article id="tiktok" class="page">
-        <div id="tiktok-embed"></div>
+        <footer onclick="window.open('https:\/\/benjammin4dayz.github.io')">
+          Made with <i class="fas fa-heart"></i> by Jam
+        </footer>
       </article>
     </main>
 
     <!-- Custom Scripts -->
     <script src="./scripts.js"></script>
     <script>
-      Site.lazyLoad("twitch-embed", 300);
-      Site.lazyLoad("youtube-embed", 300, () => YouTube.embedLatestVideo());
-      TikTok.embedCreatorProfile();
+      Site.lazyLoad("twitch-embed", 100);
+      Site.lazyLoad("youtube-embed", 100, () => YouTube.embedLatestVideo());
     </script>
   </body>
 </html>

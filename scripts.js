@@ -3,27 +3,25 @@ class Site {
 
   static lazyLoad(element, delay, callback) {
     element = document.getElementById(element);
-    !element && console.error("Element not found");
+    if (!element) return console.error("[LazyLoad]: Element not found");
     let timeoutId;
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const target = entry.target;
+
           timeoutId = setTimeout(() => {
             if (callback) {
-              observer.unobserve(entry.target);
-              return callback();
+              callback();
+            } else {
+              const dataSrc = target.getAttribute("data-src");
+              if (dataSrc) target.src = dataSrc + Site._currentURL;
             }
-            const iframe = entry.target;
-            const dataSrc = iframe.getAttribute("data-src");
-            if (dataSrc) {
-              iframe.src = dataSrc + Site._currentURL;
-            }
-            console.log("Firing observer");
-            observer.unobserve(iframe);
+            observer.unobserve(target);
+            console.log("[LazyLoad]: " + target.id);
           }, delay);
         } else {
-          console.log("Observer reset");
           clearTimeout(timeoutId);
         }
       });
@@ -33,7 +31,11 @@ class Site {
     console.log(`[LazyLoad]: Waiting to load ${element.id}`);
   }
 
-  static creatorCredit() {}
+  static creatorCredit() {
+    alert(
+      "This site was designed and developed by Benjammin4dayz\n© 2023 Some Rights Reserved\n\nContact: @benjammin4dayz on Discord"
+    );
+  }
 
   static get _currentURL() {
     // https://example.com -> example.com
@@ -72,7 +74,7 @@ class YouTube {
 class TikTok {
   constructor() {}
   static embedCreatorProfile() {
-    const embed = document.getElementById("tiktok-embed");
-    embed.innerHTML = `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@roman12663" data-unique-id="roman12663" data-embed-from="embed_page" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@roman12663?refer=creator_embed">@roman12663</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>`;
+    const embed = document.getElementById("tiktok-embed-script");
+    embed.outerHTML = ``;
   }
 }
