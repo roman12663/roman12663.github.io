@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Roman12663</title>
     <meta
@@ -10,12 +10,9 @@
       content="Roman12663 is a friendly content creator who loves playing a variety of games while entertaining his audience."
     />
     <link rel="stylesheet" href="./styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
   </head>
   <body>
+    <!-- Sidebar w/ Navigation Buttons -->
     <aside>
       <nav class="stickybar">
         <button onclick="window.location.href='#home'">
@@ -33,36 +30,44 @@
         <button onclick="window.location.href='#tiktok'">
           <i class="fab fa-tiktok"></i>
         </button>
+        <button onclick="Site.creatorCredit();">
+          <i class="fas fa-info"></i>
+        </button>
       </nav>
     </aside>
 
+    <!-- Focus Window -->
     <main>
-      <div id="home" class="page">
-        <header class="text-center">
-          <h1>Hi, I'm Roman!</h1>
+      <!-- Home -->
+      <article id="home" class="page">
+        <header class="hero text-center">
+          <h1>Hey, I'm Roman!</h1>
 
-          <h3>Variety Gamer & Content Creator</h3>
+          <h4>Variety Gamer & Content Creator</h4>
+
+          <figure>
+            <img
+              src="https://yt3.googleusercontent.com/Oa2RUV8hIqHAeT0tGJIgyc62iT1AMB4MPUsfAUTWZ6-RHEQ8S_nXU5bmOBDMFNDWMuvxfQ87=s176-c-k-c0x00ffffff-no-rj"
+              alt="Portrait"
+            />
+          </figure>
         </header>
-
-        <figure>
-          <img
-            src="https://yt3.googleusercontent.com/Oa2RUV8hIqHAeT0tGJIgyc62iT1AMB4MPUsfAUTWZ6-RHEQ8S_nXU5bmOBDMFNDWMuvxfQ87=s176-c-k-c0x00ffffff-no-rj"
-            alt="Portrait"
-          />
-        </figure>
-
         <section class="links">
-          <a href="#?missing-link"><i class="fab fa-discord"></i></a>
-          <a href="#?missing-link"><i class="fab fa-twitch"></i></a>
-          <a href="#?missing-link"><i class="fab fa-youtube"></i></a>
-          <a href="#?missing-link"><i class="fab fa-tiktok"></i></a>
+          <a href="#?missing-link"><i class="fab fa-twitch fa-2x"></i></a>
+          <a href="#?missing-link"><i class="fab fa-youtube fa-2x"></i></a>
+          <a href="#?missing-link"><i class="fab fa-discord fa-2x"></i></a>
+          <a href="#?missing-link"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#?missing-link"><i class="fab fa-tiktok fa-2x"></i></a>
         </section>
-      </div>
+      </article>
 
+      <!-- Twitch Embed -->
       <article id="twitch-stream" class="page">
         <iframe
+          id="twitch-embed"
+          class="twitch"
           style="width: 90%; height: 90%; margin: auto"
-          src="https://player.twitch.tv/?autoplay=false&channel=roman12663&parent=localhost"
+          data-src="https://player.twitch.tv/?autoplay=false&channel=roman12663&parent="
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
           width="100%"
           height="100%"
@@ -77,11 +82,31 @@
         >
       </article>
 
-      <article id="latest-video" class="page">Embedded Last Video</article>
+      <!-- YouTube Embed -->
+      <article id="latest-video" class="page">
+        <iframe
+          id="youtube-embed"
+          class="youtube"
+          style="width: 90%; height: 90%; margin: auto"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </article>
 
-      <article id="tiktok" class="page">Embedded Last TikTok</article>
-
-      <footer>Made with <i class="fas fa-heart"></i> by Jam for Roman</footer>
+      <!-- TikTok Embed -->
+      <article id="tiktok" class="page">
+        <div id="tiktok-embed"></div>
+      </article>
     </main>
+
+    <!-- Custom Scripts -->
+    <script src="./scripts.js"></script>
+    <script>
+      Site.lazyLoad("twitch-embed", 300);
+      Site.lazyLoad("youtube-embed", 300, () => YouTube.embedLatestVideo());
+      TikTok.embedCreatorProfile();
+    </script>
   </body>
 </html>
