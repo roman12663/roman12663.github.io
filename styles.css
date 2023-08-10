@@ -1,0 +1,83 @@
+:root {
+  --primary-color: #111;
+  --secondary-color: #333;
+  --tertiary-color: #555;
+  --accent-color: blue;
+  --text-color: #f3f3f3;
+}
+html {
+  /* Smoooth snap scrolling */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+body {
+  /* Flex <aside> and <main> horizontally */
+  display: flex;
+  margin: 0;
+  background-color: blue; /*! Placeholder? */
+}
+
+main {
+  /* Flex contents vertically */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  opacity: 0.33;
+  width: 100%;
+  background-color: green; /*! Placeholder? */
+  text-align: center;
+}
+footer:hover {
+  opacity: 1;
+}
+img {
+  display: block;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 100%;
+}
+.stickybar {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 60px;
+  height: 2rem;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.stickybar > button {
+  flex: 1;
+  max-height: 75px;
+  border-radius: 50px;
+}
+
+.page {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 2rem;
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Alternating Page Backgrounds */
+.page:nth-child(even) {
+  background-color: var(--secondary-color);
+}
+.page:nth-child(odd) {
+  background-color: var(--tertiary-color);
+}
