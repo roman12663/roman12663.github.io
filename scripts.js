@@ -73,8 +73,15 @@ class YouTube {
 
 class TikTok {
   constructor() {}
-  static embedCreatorProfile() {
-    const embed = document.getElementById("tiktok-embed-script");
-    embed.outerHTML = ``;
+  static embedUserProfile(element) {
+    element = document.getElementById(element);
+    const url = `https://www.tiktok.com/oembed?url=https://www.tiktok.com/@roman12663`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        element.innerHTML = data.html;
+      })
+      .catch((e) => console.error(e));
   }
 }

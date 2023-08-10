@@ -75,23 +75,7 @@
 
       <!-- TikTok Embed -->
       <article id="tiktok" class="page">
-        <blockquote
-          class="tiktok-embed"
-          cite="https://www.tiktok.com/@roman12663"
-          data-unique-id="roman12663"
-          data-embed-from="embed_page"
-          data-embed-type="creator"
-          style="max-width: 780px; min-width: 288px"
-        >
-          <section>
-            <a
-              target="_blank"
-              href="https://www.tiktok.com/@roman12663?refer=creator_embed"
-              >@roman12663</a
-            >
-          </section>
-        </blockquote>
-        <script async src="https://www.tiktok.com/embed.js"></script>
+        <div id="tiktok-embed-container"></div>
       </article>
 
       <!-- YouTube Embed -->
@@ -137,6 +121,7 @@
     <script>
       Site.lazyLoad("twitch-embed", 100);
       Site.lazyLoad("youtube-embed", 100, () => YouTube.embedLatestVideo());
+      TikTok.embedUserProfile("tiktok-embed-container");
     </script>
   </body>
 </html>
