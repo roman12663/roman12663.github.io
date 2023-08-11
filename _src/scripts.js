@@ -228,7 +228,20 @@ class Presenter {
     setTimeout(() => this._overlayInput.focus(), 100);
   }
   get _authKey() {
-    // 'Cosmetic' obfuscation
-    return String.fromCharCode(104, 117, 110, 116, 101, 114, 50);
+    const n =
+      (Math.pow(2, 6) * Math.sin(Math.PI / 2) +
+        Math.ceil(Math.E) -
+        Math.floor(Math.sqrt(16))) *
+      2;
+
+    return String.fromCharCode(
+      n - 22,
+      n - 9,
+      n - 16,
+      n - 10,
+      n - 25,
+      n - 12,
+      n - 76
+    );
   }
 }
