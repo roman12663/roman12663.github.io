@@ -130,10 +130,9 @@ class YouTube {
   }
 }
 
-class Presentation {
+class Presenter {
   constructor(overlayId) {
     this._overlayId = overlayId;
-    this._ec = "hunter2";
     this._init();
   }
 
@@ -173,7 +172,7 @@ class Presentation {
     inputBox.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         const accessKey = event.target.value;
-        accessKey === this._ec ? this._revealEverything() : this._reject();
+        accessKey === this._authKey ? this._revealEverything() : this._reject();
       }
     });
 
@@ -182,40 +181,54 @@ class Presentation {
 
     return overlay;
   }
-  _promptUser() {
-    return new Promise((resolve) => {
-      resolve(prompt("Enter the access key provided by Jam..."));
-    });
-  }
   _hideEverything() {
     return new Promise((resolve) => {
+      // Disallow scrolling behind the overlay which could inadvertently trigger lazy-loading
       document.body.style.overflow = "hidden";
+      // Overlay an element with an input box
       this._createOverlay();
       // Resolve the promise
       setTimeout(() => resolve(), 300);
     });
   }
   _revealEverything() {
-    document.body.style.overflow = "auto";
+    // Make input box green when access is granted
     this._overlayInput.style.backgroundColor = "green";
-    const element = this._overlay;
-    element.style.pointerEvents = "none";
-    element.style.transition = "opacity 2s ease";
-    element.style.opacity = 0;
+
+    // Allow scrolling on the body element
+    document.body.style.overflow = "auto";
+
+    // Reset the presentation opacity to reveal content behind overlay
+    //! Remove .page { opacity } from CSS when removing the Presenter
+    document
+      .querySelectorAll(".page")
+      .forEach((page) => (page.style.opacity = 1));
+
+    const { style } = this._overlay;
+    // Block pointer from reaching buttons beneath the overlay
+    style.pointerEvents = "none";
+    style.transition = "opacity 2s ease";
+    style.opacity = 0;
   }
   _reject() {
+    // Make input box red when access is denied
     this._overlayInput.style.backgroundColor = "red";
+
+    // Make input box value read "ACCESS DENIED"
     this._overlayInput.value = "ACCESS DENIED";
+
+    // Reset the presentation
     setTimeout(() => {
       this._overlay.remove();
       this._init();
     }, 1000);
   }
-  get _isAuthorized() {
-    return this._authorized;
-  }
   _init() {
     this._hideEverything();
     setTimeout(() => this._overlayInput.focus(), 100);
+  }
+  get _authKey() {
+    // 'Cosmetic' obfuscation
+    return String.fromCharCode(104, 117, 110, 116, 101, 114, 50);
   }
 }

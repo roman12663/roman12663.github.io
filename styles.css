@@ -201,6 +201,7 @@ nav.stickybar > button:active {
   min-height: 100vh;
   font-size: 2rem;
   color: var(--text-color);
+  opacity: 0; /*! For presentation only - remove this in prod! */
 }
 /* --- */
 /* Brand-related */
