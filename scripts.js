@@ -129,3 +129,93 @@ class YouTube {
       .catch((e) => console.log(e));
   }
 }
+
+class Presentation {
+  constructor(overlayId) {
+    this._overlayId = overlayId;
+    this._ec = "hunter2";
+    this._init();
+  }
+
+  _createOverlay() {
+    // Create the overlay
+    const overlay = document.createElement("div");
+    this._overlay = overlay;
+    overlay.id = this._overlayId;
+    const { style } = overlay;
+    style.position = "fixed";
+    style.top = "0";
+    style.left = "0";
+    style.width = "100%";
+    style.height = "100%";
+    style.background = "var(--gradient-alt)";
+    style.zIndex = "9999";
+    style.pointerEvents = "auto";
+
+    // Create the text input box
+    const inputBox = document.createElement("input");
+    this._overlayInput = inputBox;
+    inputBox.type = "text";
+    inputBox.placeholder = "Enter the access key provided by Jam...";
+    const inputBoxStyle = inputBox.style;
+    inputBoxStyle.position = "absolute";
+    inputBoxStyle.top = "50%";
+    inputBoxStyle.left = "50%";
+    inputBoxStyle.transform = "translate(-50%, -50%)";
+    inputBoxStyle.width = "300px";
+    inputBoxStyle.padding = "10px";
+    inputBoxStyle.fontSize = "16px";
+
+    // Append the text input box to the overlay
+    overlay.appendChild(inputBox);
+
+    // Capture and parse input when the user presses enter
+    inputBox.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        const accessKey = event.target.value;
+        accessKey === this._ec ? this._revealEverything() : this._reject();
+      }
+    });
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+
+    return overlay;
+  }
+  _promptUser() {
+    return new Promise((resolve) => {
+      resolve(prompt("Enter the access key provided by Jam..."));
+    });
+  }
+  _hideEverything() {
+    return new Promise((resolve) => {
+      document.body.style.overflow = "hidden";
+      this._createOverlay();
+      // Resolve the promise
+      setTimeout(() => resolve(), 300);
+    });
+  }
+  _revealEverything() {
+    document.body.style.overflow = "auto";
+    this._overlayInput.style.backgroundColor = "green";
+    const element = this._overlay;
+    element.style.pointerEvents = "none";
+    element.style.transition = "opacity 2s ease";
+    element.style.opacity = 0;
+  }
+  _reject() {
+    this._overlayInput.style.backgroundColor = "red";
+    this._overlayInput.value = "ACCESS DENIED";
+    setTimeout(() => {
+      this._overlay.remove();
+      this._init();
+    }, 1000);
+  }
+  get _isAuthorized() {
+    return this._authorized;
+  }
+  _init() {
+    this._hideEverything();
+    setTimeout(() => this._overlayInput.focus(), 100);
+  }
+}

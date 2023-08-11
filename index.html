@@ -30,6 +30,8 @@
       href="./favicon-16x16.png"
     />
     <link rel="manifest" href="./site.webmanifest" />
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script src="./scripts.js"></script>
   </head>
   <body>
     <!-- Sidebar w/ Navigation Buttons -->
@@ -172,14 +174,12 @@
       </article>
     </main>
 
-    <!-- TikTok Embed Script -->
-    <script async src="https://www.tiktok.com/embed.js"></script>
     <!-- Custom Scripts -->
-    <script src="./scripts.js"></script>
     <script>
+      new Presentation("HIDE");
+      Site.updatePagePosOnScroll();
       Site.lazyLoad("twitch-embed", 100);
       Site.lazyLoad("youtube-embed", 100, () => YouTube.embedLatestVideo());
-      Site.updatePagePosOnScroll();
     </script>
   </body>
   <!-- © 2023 Benjammin4dayz. Some rights reserved.  -->
