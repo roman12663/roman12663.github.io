@@ -2,7 +2,10 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 /* Lato Font */
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
+/*
+ * @benjammin4dayz on Discord & GitHub
+ * © 2023 Benjammin4dayz. Some rights reserved. 
+*/
 /* Color Vars */
 :root {
   --primary-color: #443fb2;
@@ -29,7 +32,7 @@
     #e6e6ff 100%
   );
 }
-
+/* --- */
 /* Custom Animations */
 @keyframes pulse-border {
   0% {
@@ -65,13 +68,13 @@
     color: var(--primary-color);
   }
 }
-
+/* --- */
 /* Smoooth snap scrolling */
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
-
+/* --- */
 /* Flex <aside> and <main> elements horizontally in the window */
 body {
   display: flex;
@@ -79,14 +82,15 @@ body {
   background-color: var(--accent-color);
   font-family: "Lato", sans-serif;
 }
-
+/* --- */
 /* Flex <main> children elements vertically in the window */
 main {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-
+/* --- */
+/* Site Landing */
 #home {
   background: var(--gradient);
 }
@@ -136,13 +140,14 @@ img {
   text-decoration: none;
 }
 .links a:hover {
+  transform: translateY(-5px);
   animation: none;
   color: var(--accent-color);
 }
 .links a:active {
   transform: scale(1.5);
 }
-
+/* --- */
 /* Sidebar */
 nav.stickybar {
   display: flex;
@@ -169,6 +174,7 @@ nav.stickybar > button {
   height: 45px;
   transition: background-color 0.3s ease;
   background-color: var(--dark-color-zero);
+  cursor: pointer;
   border: none;
   border-radius: 10px;
   font-size: 20px;
@@ -180,26 +186,30 @@ nav.stickybar > button:hover {
 nav.stickybar > button:active {
   background-color: var(--dark-color-two);
 }
-
-/* 1 page = 100% window height*/
+.active {
+  background-color: var(--accent-color) !important;
+  cursor: default !important;
+}
+/* --- */
+/* Layout Structure*/
 .page {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
   font-size: 2rem;
   color: var(--text-color);
 }
-
+/* --- */
+/* Brand-related */
 iframe {
   border-radius: 10px;
 }
-/* Brand-colored borders */
-.tiktok-embed {
-  border: 5px solid black;
+#tiktok .loading {
   background: #ff0050;
+  border: 5px solid black;
   border-radius: 25px;
 }
 iframe.twitch {
@@ -208,24 +218,40 @@ iframe.twitch {
 iframe.youtube {
   border: 5px solid #ff0000;
 }
-
+/* TikTok Embed */
+#tiktok a {
+  display: inline-block;
+  position: relative;
+  padding: 0 5px;
+  transition: transform 0.3s;
+  font-size: 32px;
+  font-weight: bold;
+  color: #00f2ea;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px black;
+}
+#tiktok a:hover {
+  transform: translateY(-3px);
+}
+blockquote i {
+  margin: 1rem;
+  color: #000;
+}
+/* --- */
+/* Bottom Site Footer */
 footer {
-  font-size: 16px;
+  padding: 10px;
+  transition: background 3s ease;
   background: var(--gradient);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 10px;
-  transition: background 3s ease;
+  font-size: 16px;
 }
 footer:hover {
   background: var(--gradient-alt);
   cursor: pointer;
 }
-
-.text-center {
-  text-align: center;
-}
-
+/* --- */
 /* Alternating Page Backgrounds */
 .page:nth-child(even) {
   background-color: var(--primary-color);
@@ -233,6 +259,7 @@ footer:hover {
 .page:nth-child(odd) {
   background-color: var(--secondary-color);
 }
+/* --- */
 
 /* me: (╯°□°）╯ mobile: ︵ ┻━┻ */
 @media screen and (max-width: 480px) {
@@ -244,4 +271,11 @@ footer:hover {
     background-color: var(--dark-color-zero);
     border-radius: 25px;
   }
+}
+
+.text-center {
+  text-align: center;
+}
+.top-margin {
+  margin-top: 5rem;
 }
