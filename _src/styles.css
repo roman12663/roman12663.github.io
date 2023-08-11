@@ -280,3 +280,23 @@ footer:hover {
 .top-margin {
   margin-top: 5rem;
 }
+
+/* Scrollbar Styles */
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--secondary-color);
+}
+/* Webkit */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+}
+::-webkit-scrollbar-thumb:hover::after {
+  background-color: #3333331c;
+}
