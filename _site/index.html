@@ -36,8 +36,17 @@
       href="./assets/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./site.webmanifest" />
-    <script async src="https://www.tiktok.com/embed.js"></script>
     <script src="./assets/js/scripts.min.js"></script>
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <!-- Discord Embed Script (powered by Crate)
+    https://docs.widgetbot.io/embed/crate/tutorial/ -->
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+      new Crate({
+        server: '538361511731789864',
+        channel: '538361917987618831',
+      })
+    </script>
   </head>
   <body>
     <!-- Sidebar w/ Navigation Buttons -->
