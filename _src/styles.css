@@ -71,6 +71,7 @@
 /* --- */
 /* Smoooth snap scrolling */
 html {
+  --vh: 100vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -156,7 +157,7 @@ nav.stickybar {
   z-index: 100;
   top: 0;
   width: 60px;
-  height: 100vh;
+  height: var(--vh);
   background-color: var(--dark-color-zero);
   border-top-right-radius: 25px;
 }
@@ -198,7 +199,7 @@ nav.stickybar > button:active {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  min-height: var(--vh);
   font-size: 2rem;
   color: var(--text-color);
 }

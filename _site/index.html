@@ -38,13 +38,13 @@
     <link rel="manifest" href="./site.webmanifest" />
     <script src="./assets/js/scripts.min.js"></script>
     <!-- TikTok Embed Script -->
-    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script src="https://www.tiktok.com/embed.js" async></script>
     <!-- Discord Embed Script (powered by Crate)
     https://docs.widgetbot.io/embed/crate/tutorial/ -->
     <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
       new Crate({
-        server: '538361511731789864',
-        channel: '538361917987618831',
+        server: '538361511731789864', // Apple Community
+        channel: '538361917987618831' // Announcements
       })
     </script>
   </head>
@@ -86,7 +86,7 @@
       <!-- Home / Landing -->
       <article id="home" class="page">
         <!-- Tagline -->
-        <header class="hero text-center top-margin">
+        <header class="hero text-center">
           <h1>Hey, I'm Roman!</h1>
           <h4>Variety Gamer & Content Creator</h4>
         </header>
@@ -195,9 +195,7 @@
 
     <!-- Custom Scripts -->
     <script>
-      Site.updatePagePosOnScroll();
-      Site.lazyLoad("twitch-embed", 100);
-      Site.lazyLoad("youtube-embed", 100, () => YouTube.embedLatestVideo());
+      Site.init();
     </script>
   </body>
   <!-- © 2023 Benjammin4dayz. Some rights reserved.  -->
