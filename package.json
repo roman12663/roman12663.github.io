@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "s": "live-server --no-browser --mount=/:_site --port=8080",
+    "build-js": "terser _src/scripts.js -o _site/assets/js/scripts.min.js --compress --mangle",
+    "build-css": "csso _src/styles.css -o _site/assets/css/styles.min.css",
+    "build": "npm run build-js && npm run build-css"
+  },
+  "dependencies": {
+    "csso": "^5.0.5",
+    "terser": "^5.19.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "live-server": "^1.2.2",
+    "prettier": "^2.5.1"
+  }
+}
