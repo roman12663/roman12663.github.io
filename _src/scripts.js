@@ -5,7 +5,7 @@ class Site {
   static init() {
     Site.info("site-info");
     Site.trueViewHeight();
-    Site.updatePagePosOnScroll();
+    Site.trackPageHash();
     Site.lazyLoad("twitch-embed", 100);
     Site.lazyLoad("youtube-embed", 100, () =>
       Site._util.YouTube.embedLatestVideo()
@@ -21,7 +21,7 @@ class Site {
     new Site._util.TrueViewHeight();
   }
 
-  static updatePagePosOnScroll() {
+  static trackPageHash() {
     // Update page hash to reflect the active article as the user scrolls
     // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
     const observer = new IntersectionObserver(
@@ -200,7 +200,7 @@ class Site {
       }
 
       _debounce(handler) {
-        const delay = Math.floor(Math.random() * 133, 66);
+        const delay = Math.max(Math.random() * 133, 66);
         let isBeingResized;
 
         return () => {
