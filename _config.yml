@@ -1,0 +1,48 @@
+# Site settings
+title: Roman's Website # The title of your site
+description: Roman12663 is a friendly content creator who loves playing a variety of games while entertaining his audience. # Short description of your site that will appear in search engines
+baseurl: '' # The subpath of your site, e.g. /blog
+url: 'https://roman12663.github.io' # The base hostname & protocol for your site
+
+# Build settings
+client:
+  intro: Hey, I'm # Hello, I'm { name }!
+  name: Roman # John Doe | Jane D.
+  profession: Variety Gamer & Content Creator # Doer of things
+  portrait_url: # Leave blank to use local portrait in assets/
+
+social:
+  - platform: Twitch
+    handle: roman12663
+  - platform: YouTube
+    handle: '@roman1266'
+  - platform: Instagram
+    handle: roman12663
+  - platform: TikTok
+    handle: '@roman12663'
+
+theme: flow
+colors:
+  preset:
+    # 1 = Elegant Lavender
+    # 2 = Candy Crush
+    # 3 = Cotton Candy
+    # 4 = Coral Reef
+  use_custom: # Toggle colors defined below this
+  primary:
+  secondary:
+  tertiary:
+  accent:
+  accent_alt:
+  text:
+
+sass:
+  style: compressed
+  sourcemap: development
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - .github/
+  - serve.rb

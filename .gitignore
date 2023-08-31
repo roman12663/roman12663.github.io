@@ -1,4 +1,4 @@
-package-lock.json
-node_modules
-css/
-js/
+*.gem
+*.map
+.jekyll-cache
+.sass-cache
