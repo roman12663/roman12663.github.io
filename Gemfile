@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.2"
-gem 'flow', github: 'benjammin4dayz/jekyll-themes', tag: 'flow-v0.1.2'
+gem 'flow', github: 'benjammin4dayz/jekyll-themes', tag: 'flow-v0.1.3'
 
 # group :jekyll_plugins do
 # gem "jekyll-feed", "~> 0.12"

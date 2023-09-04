@@ -1,29 +1,3 @@
-class YouTube {
-  /**
-   * Stackoverflow tech to retrieve and embed the latest YouTube video from a channel by its ID.
-   * (Includes YouTube Shorts!)
-   *
-   * https://stackoverflow.com/questions/18267426/html-auto-embedding-recent-uploaded-videos-from-a-youtube-channel
-   */
-  static embedLatestVideo(channelID = 'UCboCEPLD2xFTN8Dp-_8eQdg') {
-    const reqURL = 'https://www.youtube.com/feeds/videos.xml?channel_id=';
-
-    fetch(
-      'https://api.rss2json.com/v1/api.json?rss_url=' +
-        encodeURIComponent(reqURL) +
-        channelID
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const link = data.items[0].link;
-        const id = link.substr(link.indexOf('=') + 1);
-        document.getElementById('youtube-embed').src =
-          'https://youtube.com/embed/' + id + '?controls=0&showinfo=0&rel=0';
-      })
-      .catch((e) => console.log(e));
-  }
-}
-
 class Twitch {
   static embedStream(targetId = 'twitch-embed') {
     const target =
@@ -41,6 +15,14 @@ class Twitch {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  FlowTheme.Utils.lazyLoad('youtube-embed', 30, YouTube.embedLatestVideo);
   FlowTheme.Utils.lazyLoad('twitch-embed', 30, Twitch.embedStream);
+
+  const EMBED_ID = 'youtube-embed';
+  const YouTube = new FlowTheme.EmbedHelper.YouTube(
+    'UCboCEPLD2xFTN8Dp-_8eQdg',
+    EMBED_ID
+  );
+  YouTube.fetchVideo().then((video) =>
+    FlowTheme.Utils.lazyLoad(EMBED_ID, 30, video.embed)
+  );
 });

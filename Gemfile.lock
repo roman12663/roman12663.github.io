@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/benjammin4dayz/jekyll-themes.git
-  revision: 9ce24c7f15d2495c9d0b9b44569362153bcc9a22
-  tag: flow-v0.1.2
+  revision: 33b63ff43dc43d03887acfc7975d8ca8c70eb5f2
+  tag: flow-v0.1.3
   specs:
-    flow (0.1.2)
+    flow (0.1.3)
       jekyll (~> 4.3.2)
 
 GEM
