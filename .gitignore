@@ -1,5 +1,0 @@
-*.gem
-*.map
-.jekyll-cache
-.sass-cache
-_site/assets/js/_*
