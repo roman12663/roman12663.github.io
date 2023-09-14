@@ -34,8 +34,15 @@ jobs:
           bundler-cache: true
 
       - name: Generate site
-        run: bundle exec jekyll build
+        run: |
+          echo "JEKYLL_ENV=production" >> $GITHUB_ENV
+          bundle exec jekyll build
         working-directory: ./
+
+      - name: Tidy up
+        run: |
+          rm -rf _site/assets/js/_src
+          find _site -type f -name "*.map" -delete
 
       - name: Setup Pages
         uses: actions/configure-pages@v3

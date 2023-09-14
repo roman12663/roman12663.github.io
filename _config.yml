@@ -36,13 +36,5 @@ colors:
   accent_alt:
   text:
 
-sass:
-  style: compressed
-  sourcemap: development
-
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - .gitignore
-  - .github/
   - serve.rb
