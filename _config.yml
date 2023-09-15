@@ -38,3 +38,4 @@ colors:
 
 exclude:
   - serve.rb
+  - README.md
