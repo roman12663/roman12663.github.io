@@ -18,7 +18,9 @@ FlowTheme.Utils.lazyLoad('twitch-embed', 30, Twitch.embedStream);
 
 const EMBED_ID = 'youtube-embed';
 const YouTube = new FlowTheme.EmbedHelper.YouTube(
-  'UCboCEPLD2xFTN8Dp-_8eQdg',
+  // 'UCboCEPLD2xFTN8Dp-_8eQdg', // Main Channel
+  'UCzgs2tfT3kQa4zRt7JQ-I1A', // Clips Channel
+  // 'UCX2jBlLv0GG-f_rWmO3gOUQ', // VOD channel
   EMBED_ID
 );
 YouTube.fetchVideo().then((video) =>
