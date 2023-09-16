@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.2"
-gem "flow", tag: 'flow-v0.1.5', github: 'benjammin4dayz/jekyll-themes'
+gem "flow", tag: 'flow-v0.1.6', github: 'benjammin4dayz/jekyll-themes'
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

@@ -27,32 +27,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       - name: Install dependencies
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
-
       - name: Generate site
         run: |
           echo "JEKYLL_ENV=production" >> $GITHUB_ENV
+          echo "THEME_VERSION=$(bundle info flow --version)" >> $GITHUB_ENV
           bundle exec jekyll build
-        working-directory: ./
-
-      - name: Tidy up
+      - name: Generate additional metadata
+        run: |
+          mkdir -p ./_site/metadata
+          echo "{ \"schemaVersion\": 1, \"label\": \"theme\", \"message\": \"flow-v$THEME_VERSION\", \"color\": \"blue\" }" > ./_site/metadata/version.json
+      - name: Finalize build
         run: |
           rm -rf _site/assets/js/_src
           find _site -type f -name "*.map" -delete
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./_site
-
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
   deploy:
     environment:
       name: github-pages

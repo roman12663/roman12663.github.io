@@ -14,15 +14,13 @@ class Twitch {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  FlowTheme.Utils.lazyLoad('twitch-embed', 30, Twitch.embedStream);
+FlowTheme.Utils.lazyLoad('twitch-embed', 30, Twitch.embedStream);
 
-  const EMBED_ID = 'youtube-embed';
-  const YouTube = new FlowTheme.EmbedHelper.YouTube(
-    'UCboCEPLD2xFTN8Dp-_8eQdg',
-    EMBED_ID
-  );
-  YouTube.fetchVideo().then((video) =>
-    FlowTheme.Utils.lazyLoad(EMBED_ID, 30, video.embed)
-  );
-});
+const EMBED_ID = 'youtube-embed';
+const YouTube = new FlowTheme.EmbedHelper.YouTube(
+  'UCboCEPLD2xFTN8Dp-_8eQdg',
+  EMBED_ID
+);
+YouTube.fetchVideo().then((video) =>
+  FlowTheme.Utils.lazyLoad(EMBED_ID, 30, video.embed)
+);
