@@ -36,6 +36,9 @@ colors:
   accent_alt:
   text:
 
+plugins:
+  - jekyll-seo-tag
+
 exclude:
   - serve.rb
   - README.md
