@@ -1,7 +1,7 @@
 # Roman's Website
 
+[![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Froman12663.github.io%2Fmetadata%2Fversion.json&style=for-the-badge&logo=ruby)](https://github.com/roman12663/roman12663.github.io/blob/main/Gemfile#L4C1-L4C1)
 [![Website Status](https://img.shields.io/website?up_message=ONLINE&up_color=green&down_message=OFFLINE&down_color=red&url=https%3A%2F%2Froman12663.github.io&style=for-the-badge&label=status)](https://roman12663.github.io)
-![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Froman12663.github.io%2Fmetadata%2Fversion.json&style=for-the-badge&logo=ruby)
 
 [![Roman's Heart Emoji](assets/favicon/android-chrome-192x192.png)](https://roman12663.github.io)
 
