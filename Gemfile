@@ -1,8 +1,13 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.2"
-gem "flow", tag: 'flow-v0.1.7', github: 'benjammin4dayz/jekyll-themes'
-gem "jekyll-seo-tag", "~> 2.8.0"
+gem "flow", tag: 'flow-v0.2.0', github: 'benjammin4dayz/jekyll-themes'
+
+group :jekyll_plugins do
+  gem "jekyll-last-modified-at", "~> 1.3.0"
+  gem "jekyll-sitemap", "~> 1.4.0"
+  gem "jekyll-seo-tag", "~> 2.8.0"
+end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

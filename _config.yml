@@ -36,7 +36,12 @@ colors:
   accent_alt:
   text:
 
+collections:
+  - articles
+
 plugins:
+  - jekyll-last-modified-at
+  - jekyll-sitemap
   - jekyll-seo-tag
 
 exclude:
