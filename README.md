@@ -14,6 +14,7 @@
 
 > # Guides
 >
+> > [Site Icon](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-site-icon-favicon)\
 > > [Portrait](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-portrait)\
 > > [Socials](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-social-links)\
 > > [Custom HTML](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-new-articles)

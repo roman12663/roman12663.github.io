@@ -1,0 +1,13 @@
+# Jekyll
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+
+# Theme
+assets/js/_src
+
+# Other
+*.map
+*lock

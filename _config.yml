@@ -1,14 +1,14 @@
 # Site settings
-title: Roman's Website # The title of your site
-description: Roman12663 is a friendly content creator who loves playing a variety of games while entertaining his audience. # Short description of your site that will appear in search engines
-baseurl: '' # The subpath of your site, e.g. /blog
-url: 'https://roman12663.github.io' # The base hostname & protocol for your site
+title: Roman12663 - Content Creator # Name of browser tab
+tagline: Exciting Gaming Streams and Videos # Short description that will appear next to the title of the browser tab
+description: Join Roman12663 for exciting Twitch streams and YouTube videos. Experience thrilling gaming adventures and engage with a vibrant community. Subscribe now! # Short description of your site that will appear in search engines
+url: 'https://roman12663.github.io'
 
 # Build settings
 client:
   intro: Hey, I'm # Hello, I'm { name }!
   name: Roman # John Doe | Jane D.
-  profession: Variety Gamer & Content Creator # Doer of things
+  profession: Content Creator # Doer of things
   portrait_url: # Leave blank to use local portrait in assets/
 
 social:
@@ -45,5 +45,4 @@ plugins:
   - jekyll-seo-tag
 
 exclude:
-  - serve.rb
   - README.md
