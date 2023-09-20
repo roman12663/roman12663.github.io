@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.2"
-gem "flow", tag: 'flow-v0.2.1', github: 'benjammin4dayz/jekyll-themes'
+gem "flow", tag: 'flow-v0.4.0', github: 'benjammin4dayz/jekyll-themes'
 
 group :jekyll_plugins do
   gem "jekyll-last-modified-at", "~> 1.3.0"

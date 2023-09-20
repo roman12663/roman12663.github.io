@@ -37,7 +37,11 @@ colors:
   text:
 
 collections:
-  - articles
+  articles:
+    output: false
+  redirect:
+    output: true
+    permalink: /:path
 
 plugins:
   - jekyll-last-modified-at

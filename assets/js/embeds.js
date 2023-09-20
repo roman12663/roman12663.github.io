@@ -14,15 +14,25 @@ class Twitch {
   }
 }
 
-FlowTheme.Utils.lazyLoad('twitch-embed', 30, Twitch.embedStream);
-
-const EMBED_ID = 'youtube-embed';
+const ytConfig = {
+  EMBED_ID: 'youtube-embed',
+  main: {
+    channelID: 'UCboCEPLD2xFTN8Dp-_8eQdg'
+  },
+  clips: {
+    channelID: 'UCzgs2tfT3kQa4zRt7JQ-I1A'
+  },
+  vod: {
+    channelID: 'UCX2jBlLv0GG-f_rWmO3gOUQ'
+  }
+};
 const YouTube = new FlowTheme.EmbedHelper.YouTube(
-  // 'UCboCEPLD2xFTN8Dp-_8eQdg', // Main Channel
-  'UCzgs2tfT3kQa4zRt7JQ-I1A', // Clips Channel
-  // 'UCX2jBlLv0GG-f_rWmO3gOUQ', // VOD channel
-  EMBED_ID
+  ytConfig.clips.channelID,
+  ytConfig.EMBED_ID
 );
-YouTube.fetchVideo().then((video) =>
-  FlowTheme.Utils.lazyLoad(EMBED_ID, 30, video.embed)
-);
+
+FlowTheme.lazy('twitch-embed', 30, Twitch.embedStream);
+
+YouTube.fetchVideoData().then((data) => {
+  FlowTheme.lazy(ytConfig.EMBED_ID, 30, () => data.mostRecent.embed());
+});
