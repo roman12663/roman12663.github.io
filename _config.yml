@@ -21,7 +21,13 @@ social:
   - platform: TikTok
     handle: '@roman12663'
 
-theme: flow
+# TODO: Add to gem
+about_me:
+  img: # The image to be used for this section. Leave blank to use local portrait in assets/
+  bio: # Who are you? Explain in third person! e.g.) "Person is a human being who lives in planet Earth. They drink water, breathe air, and eat food."
+    Roman, also known as Roman12663 or Roman1266, is a content creator who should add more info about themselves here!
+
+theme: jam-flow
 colors:
   preset:
     # 1 = Elegant Lavender

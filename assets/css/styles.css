@@ -1,35 +1,214 @@
-/* Brand-related */
-iframe {
-  border-radius: 10px;
+/* YT Content Window */
+
+/* SimpleBar */
+.simplebar-scrollbar:before {
+  background-color: #ff0000 !important;
 }
-#tiktok .loading {
-  background: #ff0050;
+.simplebar-track {
+  pointer-events: none;
+}
+/* Prevent webkit scrollbars from appearing */
+.column--scrollable-y::-webkit-scrollbar {
+  width: 0;
+}
+
+.yt-embed-wrap {
+  margin: auto;
+  width: 95vw;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.grid--full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: fit-content;
+  margin: auto;
+}
+
+.column {
+  width: 325px;
+  margin: auto;
   border: 5px solid black;
   border-radius: 25px;
+  overflow: hidden;
+  background-color: #000000a1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-iframe.twitch {
-  border: 5px solid #9146ff;
+
+.column--scrollable-y {
+  scrollbar-width: none;
+  overflow-y: scroll;
+  height: max(80vh, 450px);
+  border-radius: none;
 }
-iframe.youtube {
-  border: 5px solid #ff0000;
-}
-/* TikTok Embed */
-#tiktok a {
-  display: inline-block;
+
+.column--title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  padding: 0 5px;
-  transition: transform 0.3s;
-  font-size: 32px;
-  font-weight: bold;
-  color: #00f2ea;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  text-align: center;
+  background-color: #ff0000;
+  border-bottom: 3px solid black;
+}
+
+.card:hover {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border: 2px solid #ff0000;
+}
+.column:hover {
+  border: 5px solid rgb(126, 25, 33);
+}
+.column--title:hover {
+  color: blue !important;
+}
+/* --- */
+
+.--no-deco {
+  outline: none;
   text-decoration: none;
-  text-shadow: 2px 2px 2px black;
+  color: var(--text-color);
 }
-#tiktok a:hover {
-  transform: translateY(-3px);
+
+/* This card style (card-07) was initially designed by Dropways - https://dropways.github.io/card-ui */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-blockquote i {
-  margin: 1rem;
-  color: #000;
+
+.layout-card-wrap {
+  padding: 0.5rem 1rem;
+  user-select: none;
+}
+
+.card {
+  background: #f3f3f3;
+  border-radius: 20px;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card__header {
+  padding: 24px;
+}
+
+.card__body img {
+  width: 100%;
+}
+
+.card__body--img {
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+}
+
+.card__footer {
+  padding: 24px;
+  font-size: 18px;
+  color: #78858f;
+}
+
+/* User Info Style */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info .avatar {
+  width: 60px;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.user-info .avatar .img-box {
+  width: 64px;
+  height: 64px;
+  padding: 3px;
+  border-radius: 100%;
+  background: #000000;
+}
+
+.user-info .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+.user-info .name {
+  width: 100%;
+  font-size: 15px;
+  color: #78858f;
+  font-weight: 500;
+}
+
+.user-info .name span {
+  display: block;
+  color: #000000;
+  font-size: 20px;
+}
+
+.user-info .user-dd {
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Dropdown Style Start */
+.dd {
+  position: relative;
+}
+
+.dd__btn {
+  border: 0;
+  background: transparent;
+  width: 42px;
+  height: 42px;
+  font-size: 24px;
+  line-height: 1;
+  color: #000000;
+  cursor: pointer;
+}
+
+.dd__menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #010101;
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 12;
+}
+
+.dd__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #eaeaea;
+  padding: 8px 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.dd__item__icon {
+  flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
+  margin-right: 16px;
+}
+
+.dd__item:hover {
+  color: #ff3c78;
 }
 /* --- */

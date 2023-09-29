@@ -3,12 +3,68 @@ title: YouTube
 anchor: youtube
 ---
 
-<iframe
-  id="youtube-embed"
-  class="youtube"
-  style="width: 90%; height: 90%; margin: auto"
-  width="100%"
-  height="100%"
-  frameborder="0"
-  allowfullscreen
-></iframe>
+<div class="yt-embed-wrap">
+  <div class="grid--full">
+    <!-- Individual Column Container -->
+    <section class="column">
+      <!-- Title Text of Column -->
+      <header class="column--title">
+        <h1>
+          <a class="--no-deco" href="https://www.youtube.com/@roman1266"
+            >roman1266</a
+          >
+        </h1>
+      </header>
+      <!-- Scrollable Area Container -->
+      <div id="youtube-card-generator-main" class="column--scrollable-y">
+        <!-- Container Items -->
+        <div class="is-replaced-by-generator"></div>
+      </div>
+    </section>
+    <!-- *** -->
+    <!-- Individual Column Container -->
+    <section class="column">
+      <!-- Title Text of Column -->
+      <header class="column--title">
+        <h1>
+          <a class="--no-deco" href="https://www.youtube.com/@roman1266Clips"
+            >roman1266 Clips</a
+          >
+        </h1>
+      </header>
+      <!-- Scrollable Area Container -->
+      <div id="youtube-card-generator-clips" class="column--scrollable-y">
+        <!-- Container Items -->
+        <div class="is-replaced-by-generator"></div>
+      </div>
+    </section>
+    <!-- *** -->
+    <!-- Individual Column Container -->
+    <section class="column">
+      <!-- Title Text of Column -->
+      <header class="column--title">
+        <h1>
+          <a class="--no-deco" href="https://www.youtube.com/@roman1266VODS"
+            >roman1266 Vods</a
+          >
+        </h1>
+      </header>
+      <!-- Scrollable Area Container -->
+      <div id="youtube-card-generator-vods" class="column--scrollable-y">
+        <!-- Container Items -->
+        <div class="is-replaced-by-generator"></div>
+      </div>
+    </section>
+    <!-- *** -->
+  </div>
+  <script>
+    // Requires SimpleBar
+    setTimeout(() => {
+      // If it's stupid but it works, is it stupid? ....yes
+      // TODO: Figure out why this doesn't fire correctly without waiting for an arbitrary amount of time
+      // ??????????????????????????????????????????????
+      const elements = document.querySelectorAll('.column--scrollable-y');
+      elements.forEach((el) => new SimpleBar(el).getScrollElement());
+    }, 1000);
+  </script>
+</div>

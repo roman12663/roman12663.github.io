@@ -1,0 +1,69 @@
+---
+title: Learn More
+anchor: learn-more
+---
+
+<style>
+  .about {
+    background-color: #404b7d;
+    padding: 2rem 1rem;
+    margin: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 100px rgba(0, 0, 0, 0.2);
+    border: 3px solid #333;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--accent-color);
+  }
+</style>
+<section class="about">
+  <div class="container">
+    <h2>About {{ site.client.name }}</h2>
+    <div class="about-content">
+      <img
+        src="{{ site.baseurl }}/assets/portrait.jpg"
+        alt="Profile Picture"
+        class="profile-img"
+      />
+      <p>{{ site.about_me.bio }}</p>
+      <a href="#youtube" class="btn">View Content</a>
+    </div>
+  </div>
+</section>

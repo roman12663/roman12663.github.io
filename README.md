@@ -17,7 +17,8 @@
 > > [Site Icon](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-site-icon-favicon)\
 > > [Portrait](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-portrait)\
 > > [Socials](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-social-links)\
-> > [Custom HTML](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-new-articles)
+> > [New Articles](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-new-articles)\
+> > [Custom HTML](https://github.com/benjammin4dayz/jekyll-themes/tree/flow-src#add-custom-pages)
 >
 > ### Available Scripts
 >
